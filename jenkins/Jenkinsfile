@@ -29,5 +29,8 @@ pipeline {
         sh './jenkins/scripts/deliver.sh'
       }
     }
+    
+    # All Stages are completed.
+    
   }
 }
