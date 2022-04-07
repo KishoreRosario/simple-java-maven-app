@@ -13,9 +13,14 @@ pipeline {
       }
     }
     
-    stage('UnitTest') {
+    stage('Test') {
       steps {
-        sh 'mvn mvn clean verify'
+        sh 'mvn test'
+      }
+      post {
+        always {
+          junit 'target/surefire-reports/*.xml'
+        }
       }
     }
   }
